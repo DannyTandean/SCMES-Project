@@ -1,0 +1,310 @@
+nav{
+    padding-top: 5px;
+    border-top: none;
+    margin:0 auto;
+    width: 100%;
+    height: 60px;
+    background-color: coral;
+
+}
+
+select{
+    width: 100%;
+}
+#logo{
+    font-size: 30px;
+    color: white;
+    font-weight: 800;
+    font-family: monospace;
+    text-decoration: none;
+    padding-right: 10%;
+}
+#nav{
+    margin: 0 auto;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#Home,#News,#Booking,#Partners,#Contact,#Review,#About,#userspace1,#userspace2{
+    padding: 20 20;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+#Home:hover,#News:hover,#Booking:hover,#Partners:hover,#Contact:hover,#Review:hover,#About:hover,#userspace1:hover,#userspace2:hover{
+    padding: 20 20;
+    padding: 20px;
+    background-color: white;
+    color: coral;
+}
+#userspace1,#userspace1:hover{
+    margin-left: 130px;
+}
+#userspace2{
+
+}
+a{
+    padding-top: 20px;
+    text-align: center;
+    text-decoration:none;
+}
+body{
+    position: relative;
+    margin: 0;
+}
+
+h1{
+    padding-bottom: 30px;
+    text-align: center;
+
+}
+#left{
+    padding: 10px;
+    float: left;
+    width: 20%;
+    background-color: lightblue;
+    border-radius: 20px;
+    height: 60%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-top: 1%;
+}
+#content{
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 10px;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    float: left;
+}
+#right{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 6px;
+    margin-top: 10px;
+    vertical-align:top;
+    float: left;
+    width: 20%;
+    padding-bottom: 20px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: lightblue;
+}
+
+input[type=text] {
+    width: 80%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    border: 1px solid black;
+    padding: 5PX;
+    margin-bottom: 4%;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+#searchbar{
+    padding-left: 30px;
+    border-radius: 50px;
+}
+#newsitem{
+    float: left;
+    width: 75%;
+}
+#newsitemall{
+    color:  white;
+    padding-bottom: 0;
+}
+h3{
+    padding-left:5.5%;
+    height: 5%;
+}
+#pre{
+    color: black;
+}
+div.tab {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: auto;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    border-radius: 20px;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding:5% 5%;
+    transition: 0.3s;
+}
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+div.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+#option{
+    width: 100%;
+    padding: 5px;
+}
+#result{
+    width: 100%;
+    background-color: white;
+    min-height: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+#btnsearch{
+    margin-top: 10px;
+    width: 100%;
+}
+#emergencybutton{
+    position: fixed;
+    bottom: 0%;
+    right: 43%;
+    padding : 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+#one,#two,#three,#pilihan{
+    float: left;
+    width: 24% ;
+    padding :3%;
+}
+#pilihan{
+    padding:1.5%;
+    margin-right: 3%;
+    margin-top: 3%;
+    background-color: white;
+}
+#pilihanbg{
+    padding: 5%;
+}
+#resultone,#resulttwo,#resultthree{
+    width: 100%;
+    background-color: white;
+    min-height: 300px;
+    height: auto;
+    margin-top: 10px;
+}
+#filter{
+    margin-top: 6%;
+    width: 100%;
+}
+#usr{
+    margin-top: 20px;
+    width: 100%;
+}
+#hari{
+    width: 25%;
+    text-align: right;
+    margin-left: 4%;
+}
+div.tab1 {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 7%;
+}
+
+/* Style the buttons inside the tab */
+div.tab1 button {
+    border-radius: 20px;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1%;
+    width: 33.3%;
+    transition: 0.3s;
+
+}
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+div.tab button.active {
+    background-color: #ccc;
+}
+#review{
+
+}
+#reviewimage{
+    width: 15%;
+    padding: 2%;
+    float: left;
+}
+#reviewdataitem{
+    background-color: lightgrey;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    width :100%;
+}
+.checked {
+    color: orange;
+}
+#keteranganitem{
+    min-height: 30%;
+
+}
+#emergencyinfo{
+    padding-left: 2%;
+    color: white;
+}
+#emergencytitle{
+    text-align: center;
+    color: white;
+}
+#imageemergency{
+    float: left;
+}
+#emergencytext{
+    float: left;
+    width: 70%;
+    margin-left: 2%;
+}
+#emergencyiteminfo{
+    float: left;
+    width: 70%;
+    margin-left: 2%;
+}
+#buttons{
+    margin-top: 2%;
+    width: 100%;
+    float:right;
+}
+#addlocation,#autolocation,#addimageemergency{
+    width: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#btnreport{
+    margin-right: 30%;
+    float: right;
+    width: 40%;
+    margin-top: 3%;
+    padding: 1%;
+}
