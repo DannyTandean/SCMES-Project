@@ -26,7 +26,7 @@ class About extends Component {
 
         All the third-party plugins in our themes (in case there are any) may not be licensed under the GPL and it’s your responsibility to check what license they are covered by.
         </p>
-         <a href="emergency.html"><button type="button" className="btn btn-danger" id="emergencybutton">Emergency Button</button></a>
+         <Link to="/emergency"><button type="button" className="btn btn-danger" id="emergencybutton">Emergency Button</button></Link>
 
       </div>
     );

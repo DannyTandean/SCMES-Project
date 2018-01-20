@@ -12,6 +12,9 @@ import Contact from './components/pagecomponents/contact';
 import News from './components/pagecomponents/news';
 import Review from './components/pagecomponents/review';
 import About from './components/pagecomponents/about';
+import Login from './components/pagecomponents/login';
+import Register from './components/pagecomponents/register';
+import Emergency from './components/pagecomponents/emergency';
 
 import './assets/style.css';
 class App extends Component {
@@ -26,6 +29,9 @@ class App extends Component {
           <Route path="/news" component={News}/>
           <Route path="/review" component={Review}/>
           <Route path="/about" component={About}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/emergency" component={Emergency}/>
         </div>
       </Router>
     );

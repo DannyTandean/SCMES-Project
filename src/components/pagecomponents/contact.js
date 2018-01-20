@@ -20,7 +20,7 @@ class Contact extends Component {
           After the template installation you will see blurred images (or placeholders) included for demo preview purposes only. You will need to replace them with your own images on the live website.
           All the third-party plugins in our themes (in case there are any) may not be licensed under the GPL and it’s your responsibility to check what license they are covered by.
       </p>
-       <button type="button" className="btn btn-danger" id="emergencybutton"><Link to="/Emergency" style={{color:'white'}}>Emergency Button</Link></button>
+       <button type="button" className="btn btn-danger" id="emergencybutton"><Link to="/emergency" style={{color:'white'}}>Emergency Button</Link></button>
       </div>
     );
   }

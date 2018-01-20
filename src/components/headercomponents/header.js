@@ -2,57 +2,28 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
+import TextField from 'material-ui/TextField';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+
+const items = [
+  <MenuItem key={1} value={1} primaryText="Medicine" />,
+  <MenuItem key={2} value={2} primaryText="Hospital" />,
+  <MenuItem key={3} value={3} primaryText="Dokter" />,
+];
 
 class Header extends Component {
+
+  state = {
+    value: null,
+  };
+
+  handleChange = (event, index, value) => this.setState({value});
+
   render() {
     return (
-      // <header>
-      //   <div className="row">
-      //     <div className="col-md-2">
-      //         <div className="logo">
-      //           <Link to="/">SCMES</Link>
-      //         </div>
-      //     </div>
-      //     <div className="col-md-7">
-      //     <nav>
-      //       <ul>
-      //         <li>
-      //           <Link to="/">Home</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/">News</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/">Booking</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/">Review</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/">Contact</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/">Partner</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/contact">About</Link>
-      //         </li>
-      //
-      //       </ul>
-      //     </nav>
-      //     </div>
-      //     <div className="col-md-2 pull-right navtopminus">
-      //       <ul>
-      //         <li>
-      //           <Link to="/">Login</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/">Sign in</Link>
-      //         </li>
-      //       </ul>
-      //     </div>
-      //   </div>
-      // </header>
+      <MuiThemeProvider>
       <nav>
           <div id="nav">
               <Link to="/" id="logo">SCMES</Link>
@@ -61,12 +32,49 @@ class Header extends Component {
               <Link to="/Booking" id="Booking">Booking</Link>
               <Link to="/Review" id="Review">Review</Link>
               <Link to="/Contact" id="Contact">Contact us</Link>
-              <Link to="/" id="Partners">Partners</Link>
               <Link to="/About" id="About">About us</Link>
-              <Link to="/" id="userspace1">Login</Link>
-              <Link to="/" id="userspace2">Sign up</Link>
+
+              <a data-toggle="modal" data-target="#exampleModalCenter" id="userspace1" style={{marginRight: '40%'}}>
+                Search
+              </a>
+
+              <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div className="modal-body">
+                        <span className="glyphicon glyphicon-search"></span>
+                          <TextField
+                           hintText="Medicine"
+                         /><br />
+                         <SelectField
+                           value={this.state.value}
+                           onChange={this.handleChange}
+                           floatingLabelText="Option"
+                           floatingLabelFixed={true}
+                           hintText="Category"
+                         >
+                           {items}
+                         </SelectField>
+                          <button type="button" className="btn btn-success" id="btnsearch" >Search</button>
+                          <div id="result">
+                              <p>Hasil Pencarian</p>
+                          </div>
+                      </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
    </nav>
+ </MuiThemeProvider>
     );
   }
 }

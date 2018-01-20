@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+  Link
+} from 'react-router-dom';
 
 class Homepage extends Component {
 
@@ -86,22 +89,7 @@ class Homepage extends Component {
          aliquet elementum tristique. Donec vitae cursus tellus.
          </p>
       </div>
-      <div id="right">
-          <h4>Pencarian</h4>
-        <span className="glyphicon glyphicon-search"></span>
-         <input className="Bootstrap"type="text" name="search" id="searchbar" placeholder="Rumah sakit , berita , obat ....."/>
-          <h7>Kategori</h7>
-          <select id="option">
-                <option value="volvo">Rumah Sakit</option>
-                <option value="saab">Dokter</option>
-                <option value="mercedes">Obat</option>
-          </select>
-          <button type="button" className="btn btn-success" id="btnsearch" >Search</button>
-          <div id="result">
-              <p>Hasil Pencarian</p>
-          </div>
-      </div>
-         <a href="emergency.html"><button type="button" className="btn btn-danger" id="emergencybutton" >Emergency Button</button></a>
+         <Link to="/Emergency"><button type="button" className="btn btn-danger" id="emergencybutton" >Emergency Button</button></Link>
       </div>
 
     );

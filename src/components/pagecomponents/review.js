@@ -13,8 +13,11 @@ class Review extends Component {
     return (
       <div className="container" >
        <div className="row">
-         <div className="col-md-12">
-           <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+         <div className="col-md-1">
+           &nbsp;
+         </div>
+         <div className="col-md-10">
+           <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist" style={{marginLeft: '30%',marginTop: '40px'}}>
             <li className="nav-item" >
               <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Dokter</a>
             </li>
@@ -185,7 +188,7 @@ class Review extends Component {
           </div>
          </div>
        </div>
-       <a href="emergency.html"><button type="button" className="btn btn-danger" id="emergencybutton">Emergency Button</button></a>
+       <Link to="/emergency"><button type="button" className="btn btn-danger" id="emergencybutton">Emergency Button</button></Link>
      </div>
 
     );
