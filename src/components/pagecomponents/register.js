@@ -17,10 +17,10 @@ export default class Register extends Component {
       phone: ""
     };
   }
-
-  componentWillMount(){
-    var database = firebase.database();
-  };
+  // 
+  // componentWillMount(){
+  //   var database = firebase.database();
+  // };
   componentDidMount(){
     document.title = "Register";
   };
