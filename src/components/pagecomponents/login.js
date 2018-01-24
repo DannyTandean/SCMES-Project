@@ -5,7 +5,18 @@ import {
 import TextField from 'material-ui/TextField';
 import Snackbar from 'material-ui/Snackbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Authen from './authen';
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDCNveWoIQ9Adam2bVYjO815w355Awy3hg",
+  authDomain: "reactjs-db5d2.firebaseapp.com",
+  databaseURL: "https://reactjs-db5d2.firebaseio.com",
+  projectId: "reactjs-db5d2",
+  storageBucket: "reactjs-db5d2.appspot.com",
+  messagingSenderId: "552703552839"
+};
+
 
 export default class Login extends Component {
   componentDidMount(){
@@ -15,7 +26,7 @@ export default class Login extends Component {
   constructor(props){
     super(props);
     this.state={
-      username: "",
+      email: "",
       password: "",
       open: false,
     };
@@ -27,7 +38,7 @@ export default class Login extends Component {
    };
 
   handleLogin(evt) {
-      this.setState({username: evt.target.value});
+      this.setState({email: evt.target.value});
   }
 
   handlePassword(evt){
@@ -36,15 +47,20 @@ export default class Login extends Component {
 
   submitForm(evt){
     evt.preventDefault();
-    if(this.state.username === "admin" && this.state.password === "admin")
-    {
-      this.props.history.push('/');
-    }
-    else{
-      this.setState({
-        open: true,
-      });
-    }
+    firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password);
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if(firebaseUser){
+        var x = document.getElementById('hiding');
+        x.classList.add('showing');
+        this.props.history.push('/');
+      }
+      else{
+        this.setState({
+          open: true,
+        });
+      }
+    });
+
   }
 
   render(){
@@ -58,7 +74,8 @@ export default class Login extends Component {
                 <div className="col-md-4">
                   <form onSubmit={this.submitForm.bind(this)}>
                     <TextField
-                      floatingLabelText = "Username"
+                      floatingLabelText = "Email"
+                      type = "email"
                       onChange={this.handleLogin.bind(this)}
                     />
                     <TextField

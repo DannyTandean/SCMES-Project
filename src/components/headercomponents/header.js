@@ -6,12 +6,24 @@ import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import * as firebase from 'firebase';
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDCNveWoIQ9Adam2bVYjO815w355Awy3hg",
+  authDomain: "reactjs-db5d2.firebaseapp.com",
+  databaseURL: "https://reactjs-db5d2.firebaseio.com",
+  projectId: "reactjs-db5d2",
+  storageBucket: "reactjs-db5d2.appspot.com",
+  messagingSenderId: "552703552839"
+};
 
 const items = [
   <MenuItem key={1} value={1} primaryText="Medicine" />,
   <MenuItem key={2} value={2} primaryText="Hospital" />,
   <MenuItem key={3} value={3} primaryText="Dokter" />,
 ];
+
+
 
 class Header extends Component {
 
@@ -20,7 +32,10 @@ class Header extends Component {
   };
 
   handleChange = (event, index, value) => this.setState({value});
-
+  userLogout(){
+      firebase.auth().signOut();
+      document.location.href = '/login';
+  }
   render() {
     return (
       <MuiThemeProvider>
@@ -72,6 +87,7 @@ class Header extends Component {
                   </div>
                 </div>
               </div>
+              <button id="hiding" onClick={this.userLogout} style={{float:'right',marginTop:'-35px',backgroundColor:'orange'}} className="hide">logout</button>
           </div>
    </nav>
  </MuiThemeProvider>

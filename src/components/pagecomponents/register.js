@@ -5,22 +5,45 @@ import {
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Authen from './authen';
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDCNveWoIQ9Adam2bVYjO815w355Awy3hg",
+  authDomain: "reactjs-db5d2.firebaseapp.com",
+  databaseURL: "https://reactjs-db5d2.firebaseio.com",
+  projectId: "reactjs-db5d2",
+  storageBucket: "reactjs-db5d2.appspot.com",
+  messagingSenderId: "552703552839"
+};
+firebase.initializeApp(config);
+
+const auth = firebase.auth();
+
+
+// function writeUserData(userId, name, password,phone,email) {
+// firebase.database().ref('Register'+name).set({
+//   username: name,
+//   password: password,
+//   phone:phone,
+//   email:email
+// } );
+// }
 
 export default class Register extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      userID: "1",
       username: "",
       password: "",
       email: "",
-      phone: ""
+      phone: "",
+      condi: false
     };
   }
-  // 
-  // componentWillMount(){
-  //   var database = firebase.database();
-  // };
+
   componentDidMount(){
     document.title = "Register";
   };
@@ -43,7 +66,9 @@ export default class Register extends Component {
 
   submitFormRegis(evt){
     evt.preventDefault();
-    this.firebaseRef.push(this.state);
+    // writeUserData(this.state.userID,this.state.username,this.state.password,this.state.phone,this.state.email);
+    auth.createUserWithEmailAndPassword(this.state.email, this.state.password);
+    this.props.history.push('/login');
   }
 
   render() {
